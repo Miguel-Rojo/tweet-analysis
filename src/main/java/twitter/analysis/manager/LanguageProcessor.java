@@ -16,7 +16,7 @@ import java.util.Map;
 @Component
 public class LanguageProcessor {
 
-    StanfordCoreNLP pipeline;
+    private StanfordCoreNLP pipeline;
 
     @PostConstruct
     public  void init()
