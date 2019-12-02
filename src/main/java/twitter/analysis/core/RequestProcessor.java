@@ -80,23 +80,23 @@ public class RequestProcessor {
     }
 
 
-        private JSONObject fetchResponse (String expression) throws IOException {
-            Map<String, String> queryParams = new HashMap<String, String>() {{
-                put(TwitterConstants.BASE_QUERY_PARAMETER, expression);
-                put(TwitterConstants.RESULT_TYPE_QUERY_PARAMETER, TwitterConstants.POPULAR);
-                put(TwitterConstants.TWEET_MODE_QUERY_PARAMETER, TwitterConstants.EXTENDED_TWEET_MODE);
-            }};
+    private JSONObject fetchResponse (String expression) throws IOException {
+        Map<String, String> queryParams = new HashMap<String, String>() {{
+            put(TwitterConstants.BASE_QUERY_PARAMETER, expression);
+            put(TwitterConstants.RESULT_TYPE_QUERY_PARAMETER, TwitterConstants.POPULAR);
+            put(TwitterConstants.TWEET_MODE_QUERY_PARAMETER, TwitterConstants.EXTENDED_TWEET_MODE);
+        }};
 
-            ArrayList<Integer> expectedResponseCodes = new ArrayList<Integer>() {{
-                add(HttpStatus.OK.value());
-            }};
+        ArrayList<Integer> expectedResponseCodes = new ArrayList<Integer>() {{
+            add(HttpStatus.OK.value());
+        }};
 
-            return httpConnectionManager
-                    .buildUrl(TwitterConstants.BASE_URL, TwitterConstants.SEARCH_API_PATH, queryParams)
-                    .buildRequest(twitterAccessToken, HttpMethod.GET.toString(), null)
-                    .fetchJSONResponse(expectedResponseCodes);
-
-        }
+        return httpConnectionManager
+                .buildUrl(TwitterConstants.BASE_URL, TwitterConstants.SEARCH_API_PATH, queryParams)
+                .buildRequest(twitterAccessToken, HttpMethod.GET.toString(), null)
+                .fetchJSONResponse(expectedResponseCodes);
 
     }
+
+}
 

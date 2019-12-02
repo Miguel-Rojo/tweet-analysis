@@ -8,7 +8,11 @@ This is a web application that :
 (I have not been able to create the d3 chart, got stuck at a silly Javascript issue)
 (The sentiment analysis is printed in the console for now)
 
-To run the app, simply run :
+To run the app,
+
+1) Update your twitter access token in the application.properties file
+
+2) Then simply run :
 -> gradle bootRun
 
 IMPORTANT NOTE : This app uses twitter standard search api which retrieves tweets
